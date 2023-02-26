@@ -70,3 +70,151 @@
 
 // logItems(['Mango', 'Poly', 'Ajax']);
 // logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
+
+
+// Example 5 - Логування контактів
+// Напиши функцію printContactsInfo(names, phones) яка виводить у консоль ім'я та телефонний номер користувача. У параметри names та phones будуть передані рядки імен та телефонних номерів, розділені комами. Порядковий номер імен та телефонів у рядках вказують на відповідність. Кількість імен та телефонів гарантовано однакова
+
+// function printContactsInfo(names, phones) {
+//     names = names.split(',');
+//     phones = phones.split(',');
+
+//     // for (let i = 0; i < names.length; i += 1) {
+//     //     console.log(`${names[i]} - ${ phones[i]}`);
+//     // }
+    
+//     for (let i = 0; i < names.length, i<phones.length; i += 1) {
+//         console.log(`${names[i]} - ${ phones[i]}`);
+//     }
+// }
+
+// printContactsInfo(
+//     'Jacob,William,Solomon,Artem',
+//     '89001234567,89001112233,890055566377,890055566378',
+// );
+
+
+// Example 6 - Пошук найбільшого елемента
+// Напиши функцію findLargestNumber(numbers)яка шукає найбільше число в масиві.
+
+// function findLargestNumber(numbers) {
+//     // let max = arguments[0];
+//     // for (const arg of arguments) {
+//     //     if (max < arg) {
+//     //         max = arg;
+//     //     }
+//     // }
+//     // return max;
+
+//     return Math.max(...arguments);
+// }
+
+// console.log(findLargestNumber(2, 17, 94, 1, 23, 37)); // 94
+// console.log(findLargestNumber(49, 4, 7, 83, 12)); // 83
+
+
+// Example 7 - Середнє значення
+// Напишіть функцію calAverage() яка приймає довільну кількість аргументів і повертає їхнє середнє значення. Усі аргументи будуть лише числами.
+
+
+// function calAverage() {
+//     const numbers = Array.from(arguments);
+// const numbers = [...arguments]; //(те ж саме, що і вище, тільки новіший синтаксис)
+//     let sum = 0;
+
+//     for (const num of numbers) {
+//         sum += num;
+//     }
+    
+//     return sum / numbers.length;
+    
+// }
+
+// console.log(calAverage(1, 2, 3, 4)); // 2.5
+// console.log(calAverage(14, 8, 2)); // 8
+// console.log(calAverage(27, 43, 2, 8, 36)); // 23.2
+
+
+// Example 8 - Форматування часу
+// Напиши функцію formatTime(minutes) яка переведе значення minutes (кількість хвилин) у рядок у форматі годин та хвилин HH:MM.
+
+// function formatTime(minutes) {
+//     const hours = Math.floor(minutes / 60).toString().padStart(2, '0');
+//     minutes = (minutes % 60).toString().padStart(2, '0');
+//     return `${hours}:${minutes}`;
+//     // console.log(hours);
+// }
+
+
+// console.log(formatTime(70)); // "01:10"
+// console.log(formatTime(450)); // "07:30"
+// console.log(formatTime(1441)); // "24:01"
+
+
+// Example 9 - Колекція курсів (includes, i ndexOf,push і т. д.)
+// Напишіть функції для роботи з колекцією навчальних курсів courses:
+// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+// // addCourse(name) - додає курс до кінця колекції
+// // removeCourse(name) - видаляє курс із колекції
+// // updateCourse(oldName, newName) - змінює ім'я на нове
+// function addCourse(name) {
+//     if (courses.includes(name)) {
+//         return 'Ви вже маєте такий курс'
+//     }
+//     courses.push(name)
+// }
+
+// // addCourse('Express');
+// // console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
+// console.log(addCourse('CSS')); // 'Ви вже маєте такий курс'
+
+
+// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+
+// function removeCourse(name) {
+//     // if (courses.includes(name)) {
+//     //     const idx = courses.indexOf(name);
+//     //     courses.splice(idx, 1);
+//     //     return;
+//     // }
+
+// // includes => !!~indexof (пояснення)
+//     const idx = courses.indexOf(name);
+// if (!!~idx) {
+//         courses.splice(idx, 1);
+//         return;
+//     }
+//     return "Курс із таким ім'ям не знайдено"
+// }
+
+// removeCourse('React');
+// console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+// console.log(removeCourse('Vue')); //'Курс із таким ім'ям не знайдено'
+
+
+// const courses = ['HTML', 'CSS', 'JavaScript', 'Express', 'React', 'PostgreSQL'];
+// function updateCourse(oldName, newName) {
+//     // if (courses.includes(oldName)) {
+//     //     const idx = courses.indexOf(oldName);
+//     //     courses.splice(idx, 1, newName);
+//     //     return;
+//     // }
+
+
+//     const idx = courses.indexOf(oldName);
+//      if (!!~idx) {
+        
+//         courses.splice(idx, 1, newName);
+//         return;
+//     }
+
+//     return "Курс із таким ім'ям не знайдено"
+// }
+
+// updateCourse('Express', 'NestJS');
+// console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']
+// console.log(updateCourse('Vue', 'NestJS')); //Курс із таким ім'ям не знайдено'
+
+
+
